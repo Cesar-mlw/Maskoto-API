@@ -1,20 +1,14 @@
-var express = require('express')
+var express = require("express")
+var consign = require("consign")
 
-var bodyparser = require('body-parser')
+const app = express()
 
-var app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
-var connection = require('./connection')
-
-var routes = require('./routes')
-
-app.use(bodyparser.urlencoded({ extended: true }))
-app.use(bodyparser.json())
-
-connection.init()
-
-routes.configure(app)
-
-var server = app.listen(3000, function(){
-    console.log("Ouvindo na porta "+ server.address().port);
-})
+consign()
+    .include("libs/config.js")
+    .then("db.js")
+    .then("middlewares.js")
+    .then("libs/boot.js")
+    .into(app)
