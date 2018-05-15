@@ -8,7 +8,7 @@ module.exports = (sequelize, DataType) => {
         },
         dono_datetime: {
             type: DataType.DATE,
-            allowNull
+            allowNull: false
         }
     }, {
         classMethods: {
