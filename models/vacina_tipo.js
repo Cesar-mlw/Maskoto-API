@@ -11,7 +11,7 @@ module.exports = (sequelize, DataType) => {
             allowNull: false
         },
         vacina_tipo_validade: {
-            type: DataType.INT,
+            type: DataType.INTEGER,
             allowNull: false
         },
         vacina_tipo_dosagem: {

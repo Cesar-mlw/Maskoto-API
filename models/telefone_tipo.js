@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataType) => {
     const TelefoneTipo= sequelize.define("TelefoneTipo", {
         telefone_tipo_id: {
-            type: DataType.INT,
+            type: DataType.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
