@@ -1,5 +1,5 @@
  module.exports = (sequelize, DataType) => {
-     const VacinaPetPet = sequelize.define("VacinaPet", {
+     const VacinaPet = sequelize.define("VacinaPet", {
          vacina_pet_id: {
              type: DataType.INTEGER,
              primaryKey: true,
@@ -22,4 +22,5 @@
              }
          }
      })
+     return VacinaPet
  }

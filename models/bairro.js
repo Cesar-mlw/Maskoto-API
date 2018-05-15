@@ -1,21 +1,22 @@
 module.exports = (sequelize, DataType) => {
-    const Observacao = sequelize.define("Observacao", {
-        observacao_id: {
-            type: DataType.INTEGER,
+    const Bairro = sequelize.define("Bairro", {
+        bairro_id: {
+            type: DataType.INT,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
+
         },
-        observacao_text: {
-            type: DataType.TEXT,
+        bairro_nome: {
+            type: DataType.STRING,
             allowNull: false
         }
     }, {
         classMethods: {
             associate: (models) => {
-                Observacao.hasMany(models.Pet, {foreingKey: 'fk_pet_id'})
+                Bairro.hasMany(models.Cidade, {foreingKey: 'fk_cidade_id'})
             }
         }
     })
-    return Observacao
+    return Bairro
 }

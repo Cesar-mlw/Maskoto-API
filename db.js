@@ -1,10 +1,10 @@
-var fs = requere("fs")
+var fs = require("fs")
 var path = require("path")
 var Sequelize = require("sequelize")
 let db = null
 
 module.exports = app => {
-    if(!db){
+    if (!db) {
         const config = app.libs.config
         const sequelize = new Sequelize(
             config.database,
@@ -24,7 +24,7 @@ module.exports = app => {
             db.models[model.name] = model
         })
         Object.keys(db.models).forEach(key => {
-            if (db.models[key].hasOwnProperty('associate')){
+            if (db.models[key].hasOwnProperty('associate')) {
                 db.models[key].associate(db.models);
             }
         })

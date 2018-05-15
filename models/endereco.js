@@ -21,4 +21,5 @@ module.exports = (sequelize, DataType) => {
             }
         }
     })
+    return Endereco
 }

@@ -18,4 +18,5 @@ module.exports = (sequelize, DataType) => {
             }
         }
     })
+    return ExameComponente
 }

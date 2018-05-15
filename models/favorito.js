@@ -14,4 +14,5 @@ module.exports = (sequelize, DataType) => {
             }
         }
     })
+    return Favorito
 }
