@@ -15,7 +15,7 @@ module.exports = (sequelize, DataType) => {
             allowNull: false
         },
         pet_nascimento: {
-            type: DataType.DATETIME,
+            type: DataType.DATE,
             allowNull: false
         }
     }, {
