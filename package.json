@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "Welcom to Maskoto API"
+    "start": "node index.js"
   },
   "author": "Cheddar",
   "license": "ISC",
