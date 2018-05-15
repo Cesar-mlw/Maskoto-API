@@ -1,22 +1,22 @@
 module.exports = (sequelize, DataType) => {
-    const Bairro = sequelize.define("Bairro", {
-        bairro_id: {
+    const Email= sequelize.define("Email", {
+        email_id: {
             type: DataType.INTEGER,
-            primaryKey: true,
             allowNull: false,
+            primaryKey: true,
             autoIncrement: true
-
         },
-        bairro_nome: {
+        email_email: {
             type: DataType.STRING,
             allowNull: false
         }
     }, {
         classMethods: {
             associate: (models) => {
-                Bairro.hasMany(models.Cidade, {foreingKey: 'fk_cidade_id'})
+                Email.hasMany(models.Usuario, {foreingKey: 'fk_usuario_id'})
+                Email.hasMany(models.EmailTipo, {foreingKey: 'fk_email_tipo_id'})
             }
         }
     })
-    return Bairro
+    return Email
 }

@@ -1,9 +1,11 @@
 module.exports = (sequelize, DataType) => {
     const EnderecoUsuario = sequelize.define("EnderecoUsuario", {
         endereco_usuario_id: {
+            type: DataType.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
-            allowNull: false
+            allowNull: false,
+            autoIncrement: true
+            
         }    
     }, {
         classMethods: {

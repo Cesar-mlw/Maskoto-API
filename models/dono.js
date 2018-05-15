@@ -3,7 +3,8 @@ module.exports = (sequelize, DataType) => {
         dono_id: {
             type: DataType.INTEGER,
             primaryKey: true,
-            allowNull: false
+            allowNull: false,
+            autoIncrement: true
         },
         dono_datetime: {
             type: DataType.DATE,

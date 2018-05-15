@@ -1,22 +1,21 @@
 module.exports = (sequelize, DataType) => {
-    const Bairro = sequelize.define("Bairro", {
-        bairro_id: {
+    const Pais= sequelize.define("Pais", {
+        pais_id: {
             type: DataType.INTEGER,
-            primaryKey: true,
             allowNull: false,
+            primaryKey: true,
             autoIncrement: true
-
         },
-        bairro_nome: {
+        pais_nome: {
             type: DataType.STRING,
             allowNull: false
         }
     }, {
         classMethods: {
             associate: (models) => {
-                Bairro.hasMany(models.Cidade, {foreingKey: 'fk_cidade_id'})
+                Pais.hasMany(models.Continente, {foreingKey: 'fk_continente_id'})
             }
         }
     })
-    return Bairro
+    return Pais
 }

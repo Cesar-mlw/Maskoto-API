@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataType) => {
     const ComponenteTipo = sequelize.define("ComponenteTipo", {
         componente_tipo_id: {
-            type: DataType.INT,
+            type: DataType.INTEGER,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true

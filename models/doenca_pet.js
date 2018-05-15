@@ -15,7 +15,7 @@ module.exports = (sequelize, DataType) => {
             associate: (models) => {
                 DoencaPet.hasMany(models.Pet, {foreingKey: 'fk_pet_id'})
                 DoencaPet.hasMany(model.Doenca, {foreingKey: 'fk_doenca_id'})
-                DoencaPet.hasMany(model.Tipo_Doenca, {foreingKey: 'fk_tipo_doenca_id'})
+                DoencaPet.hasMany(model.DoencaTipo, {foreingKey: 'fk_tipo_doenca_id'})
             }
         }
     })
