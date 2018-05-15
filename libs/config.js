@@ -2,9 +2,9 @@ module.exports = {
     database: 'u179156626_anima',
     username: 'root',
     password: null,
-    param: {
+    params: {
         dialect: 'mysql',
-        host:'127.0.0.1',
+        host: '127.0.0.1',
         port: 3306
     }
 }
