@@ -1,12 +1,11 @@
-var sequelize = require('../db.js')
+var db = require('../db.js')
 
 module.exports = app => {
     app.route("/doe_all")
         .get((req, res) => {
-            sequelize.query("SELECT * FROM u179156626_anima.doenca_all", {type: sequelize.QueryTypes.SELECT})
-                .then(doe => res.json(doe))
-                .catch(error => {
-                    res.status(412).json({msg: error.message})
-                })
+            app.db.connection.query("SELECT * FROM u179156626_anima.doenca_all").spread((results, metadata) => {
+                res.send({doenca: results})
+            })
+            
         })
 }

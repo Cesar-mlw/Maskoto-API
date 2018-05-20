@@ -6,21 +6,21 @@ let db = null
 module.exports = app => {
     if (!db) {
         const config = app.libs.config
-        const sequelize = new Sequelize(
+        const connection = new Sequelize(
             config.database,
             config.username,
             config.password,
             config.params
         )
         db = {
-            sequelize,
+            connection,
             Sequelize,
             models: {}
         }
         const dir = path.join(__dirname, "models")
         fs.readdirSync(dir).forEach(file => {
             const modelDir = path.join(dir, file)
-            const model = sequelize.import(modelDir)
+            const model = connection.import(modelDir)
             db.models[model.name] = model
         })
         Object.keys(db.models).forEach(key => {
