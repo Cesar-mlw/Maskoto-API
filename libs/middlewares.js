@@ -1,4 +1,8 @@
+var express = require("express")
+
 module.exports = app => {
     app.set("port", 3000)
-    app.set("json spaces", 4)
+    app.use(express.json())
+    app.use(express.urlencoded({extended: true}))
+    app.use(express.json())
 }
