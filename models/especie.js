@@ -11,5 +11,5 @@ module.exports = (sequelize, DataType) => {
             allowNull: false
         }
     })
-    return especia
+    return Especie
 }
