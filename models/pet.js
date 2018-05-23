@@ -8,7 +8,7 @@ module.exports = (sequelize, DataType) => {
         },
         pet_rga: {
             type: DataType.STRING,
-            allowNull: false
+            allowNull: true
         },
         pet_nome: {
             type: DataType.STRING,
@@ -25,6 +25,7 @@ module.exports = (sequelize, DataType) => {
                 Pet.hasMany(models.Pelagem, {foreingKey: 'fk_pelagem_id'})
                 Pet.hasMany(models.Cor, {foreingKey: 'fk_cor_id'})
                 Pet.hasMany(models.Sexo, {foreingKey: 'fk_sexo_id'})
+                Pet.hasMany(models.Especie, {foreingKey: 'fk_especie_id_pet'})
             }
         }
     })
