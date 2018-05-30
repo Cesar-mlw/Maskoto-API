@@ -1,5 +1,5 @@
 module.exports = {
-    database: 'u179156626_anima',
+    database: 'maskoto',
     username: 'root',
     password: null,
     params: {
